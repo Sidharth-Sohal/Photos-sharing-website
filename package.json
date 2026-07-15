@@ -1,0 +1,21 @@
+{
+  "name": "wedding-photo-uploader",
+  "version": "1.0.0",
+  "description": "A clean, wedding-themed web app that lets party guests upload photos straight to your Google Drive and view the shared gallery.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "get-token": "node get-token.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "googleapis": "^144.0.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

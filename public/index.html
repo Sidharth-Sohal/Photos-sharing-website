@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Wedding · Share Your Photos</title>
+    <meta
+      name="description"
+      content="Upload and view the photos from our special day. Every moment counts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="petals" aria-hidden="true"></div>
+
+    <!-- HOME -->
+    <main id="home" class="screen active">
+      <div class="card home-card">
+        <p class="eyebrow">Welcome to our celebration</p>
+        <h1 class="script">Share the Love</h1>
+        <div class="divider"><span>&#10047;</span></div>
+        <p class="subtitle">
+          Captured a beautiful moment tonight? Add it to our shared album, or
+          browse the memories everyone else has shared.
+        </p>
+        <div class="actions">
+          <button class="btn btn-primary" data-go="upload">
+            <span class="btn-icon">&#8593;</span> Upload Photos
+          </button>
+          <button class="btn btn-secondary" data-go="gallery">
+            <span class="btn-icon">&#9634;</span> View Photos
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- UPLOAD -->
+    <section id="upload" class="screen">
+      <div class="card">
+        <button class="back" data-go="home">&#8592; Back</button>
+        <h2 class="script small">Upload Your Photos</h2>
+        <p class="subtitle">Pick one or more photos from your phone.</p>
+
+        <label class="dropzone" id="dropzone">
+          <input type="file" id="fileInput" accept="image/*" multiple hidden />
+          <span class="dz-icon">&#128247;</span>
+          <span class="dz-text">Tap to choose photos</span>
+          <span class="dz-hint">JPG, PNG &middot; up to 20 at a time</span>
+        </label>
+
+        <div id="preview" class="preview"></div>
+
+        <button class="btn btn-primary full" id="uploadBtn" disabled>
+          Send to the Album
+        </button>
+        <p id="uploadStatus" class="status"></p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="screen">
+      <div class="card wide">
+        <button class="back" data-go="home">&#8592; Back</button>
+        <h2 class="script small">The Album</h2>
+        <p class="subtitle">Every memory from our special day.</p>
+        <div id="grid" class="grid"></div>
+        <p id="galleryStatus" class="status"></p>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img id="lightboxImg" alt="Wedding photo" />
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
